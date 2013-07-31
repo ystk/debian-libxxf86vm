@@ -1,3 +1,14 @@
+libxxf86vm (1:1.1.0-2+squeeze1) squeeze-security; urgency=high
+
+  * When Xcalloc() returns NULL, you don't need to Xfree() it
+  * Improve error handling in XF86VidModeGetMonitor()
+  * Unlock display before returning alloc error in XF86VidModeGetModeLine(),
+    XF86VidModeGetAllModeLines(), XF86VidModeGetDotClocks()
+  * memory corruption in XF86VidModeGetGammaRamp() [CVE-2013-2001]
+  * avoid integer overflow in XF86VidModeGetModeLine
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 29 May 2013 11:15:36 +0200
+
 libxxf86vm (1:1.1.0-2) unstable; urgency=low
 
   * Upload to unstable.
