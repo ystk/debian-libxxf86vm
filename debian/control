@@ -2,18 +2,17 @@ Source: libxxf86vm
 Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: David Nusinow <dnusinow@debian.org>, Andres Salomon <dilinger@debian.org>, Julien Cristau <jcristau@debian.org>
+Uploaders: Cyril Brulebois <kibi@debian.org>
 Build-Depends:
- debhelper (>= 5.0.0),
+ debhelper (>= 8.1.2),
+ dh-autoreconf,
  libx11-dev (>= 1:0.99.2),
  x11proto-xf86vidmode-dev (>= 2.2.99.1),
  libxext-dev (>= 1:0.99.1),
  pkg-config,
  quilt,
- automake,
- libtool,
- xutils-dev (>= 1:7.5~1)
-Standards-Version: 3.8.3
+ xutils-dev (>= 1:7.5+4),
+Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxxf86vm
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libxxf86vm.git
 
@@ -21,6 +20,8 @@ Package: libxxf86vm1
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Description: X11 XFree86 video mode extension library
  libXxf86vm provides an interface to the XFree86-VidModeExtension
  extension, which allows client applications to get and set video mode
@@ -29,8 +30,6 @@ Description: X11 XFree86 video mode extension library
  .
  More information about X.Org can be found at:
  <URL:http://www.X.org>
- <URL:http://xorg.freedesktop.org>
- <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
  .
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXxf86vm
@@ -40,6 +39,7 @@ Section: debug
 Architecture: any
 Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libxxf86vm1 (= ${binary:Version})
+Multi-Arch: same
 Description: X11 XFree86 video mode extension library (debug package)
  libXxf86vm provides an interface to the XFree86-VidModeExtension
  extension, which allows client applications to get and set video mode
@@ -51,8 +51,6 @@ Description: X11 XFree86 video mode extension library (debug package)
  .
  More information about X.Org can be found at:
  <URL:http://www.X.org>
- <URL:http://xorg.freedesktop.org>
- <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
  .
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXxf86vm
@@ -79,8 +77,6 @@ Description: X11 XFree86 video mode extension library (development headers)
  .
  More information about X.Org can be found at:
  <URL:http://www.X.org>
- <URL:http://xorg.freedesktop.org>
- <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
  .
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXxf86vm

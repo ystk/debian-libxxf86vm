@@ -1,3 +1,53 @@
+libxxf86vm (1:1.1.2-1+deb7u1) wheezy-security; urgency=high
+
+  * When Xcalloc() returns NULL, you don't need to Xfree() it
+  * Improve error handling in XF86VidModeGetMonitor()
+  * Unlock display before returning alloc error in XF86VidModeGetModeLine(),
+    XF86VidModeGetAllModeLines(), XF86VidModeGetDotClocks()
+  * memory corruption in XF86VidModeGetGammaRamp() [CVE-2013-2001]
+  * avoid integer overflow in XF86VidModeGetModeLine()
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 15 May 2013 19:35:47 +0200
+
+libxxf86vm (1:1.1.2-1) unstable; urgency=low
+
+  [ Robert Hooker ]
+  * New upstream release.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 30 Apr 2012 15:27:46 +0200
+
+libxxf86vm (1:1.1.1-2) unstable; urgency=low
+
+  * Team upload.
+
+  [ Steve Langasek ]
+  * Build for multiarch.
+
+  [ Timo Aaltonen ]
+  * Switch to dh.
+  * Remove xsfbs accordingly.
+  * Bump Standards-Version to 3.9.2 (no changes).
+  * Remove David Nusinow and Andres Salomon from Uploaders.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 12 Jun 2011 16:41:06 +0200
+
+libxxf86vm (1:1.1.1-1) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Rename the build directory to not include DEB_BUILD_GNU_TYPE for no
+    good reason.  Thanks, Colin Watson!
+  * Remove myself from Uploaders
+
+  [ Cyril Brulebois ]
+  * New upstream release.
+  * Update debian/copyright from upstream COPYING.
+  * Bump xutils-dev build-dep for new macros.
+  * Switch from --list-missing to --fail-missing for additional safety.
+  * Exclude libXxf86vm.la from dh_install accordingly.
+  * Add myself to Uploaders.
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 19 Nov 2010 14:28:15 +0100
+
 libxxf86vm (1:1.1.0-2) unstable; urgency=low
 
   * Upload to unstable.
